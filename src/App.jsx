@@ -1,5 +1,5 @@
 import { Header } from "./components/Header";
-import { Post } from "./Post";
+import { Post } from "./components/Post";
 
 import styles from "./App.module.css";
 import "./global.css";
@@ -14,7 +14,6 @@ function App() {
         <Sidebar />
 
         <main>
-          <h1>Hello World!</h1>
           <Post author="Afonso Lima" content="Conteudo do author" />
 
           <Post author="André Silva" content="Conteudo do author" />
