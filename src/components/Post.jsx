@@ -30,9 +30,6 @@ export function Post() {
           <a href="">#novoprojeto #nlw #rocketseat</a>
         </p>
       </div>
-
-      <strong>{props.author}</strong>
-      <p>{props.content}</p>
     </article>
   );
 }
