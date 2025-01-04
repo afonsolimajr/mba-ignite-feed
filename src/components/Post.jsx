@@ -2,17 +2,20 @@ import styles from "./Post.module.css";
 
 export function Post() {
   return (
-    <article className={styles.Post}>
+    <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img className={styles.avatar} src="" />
+          <img
+            className={styles.avatar}
+            src="https://github.com/afonsolimajr.png"
+          />
           <div className={styles.authorInfo}>
             <strong>Afonso Lima</strong>
             <span>Software Developer</span>
           </div>
         </div>
 
-        <time title="2025-01-03 16:35:30" datetime="2025-01-03 16:35:30">
+        <time title="2025-01-03 16:35:30" dateTime="2025-01-03 16:35:30">
           Publicado há algum tempo
         </time>
       </header>
@@ -26,9 +29,11 @@ export function Post() {
         <p>
           👉 <a href="">jane.design/doctorcare</a>{" "}
         </p>
-        <p>
-          <a href="">#novoprojeto #nlw #rocketseat</a>
-        </p>
+        <div className={styles.horizontal}>
+          <a href="">#novoprojeto</a>
+          <a href="">#nlw</a>
+          <a href="">#rocketseat</a>
+        </div>
       </div>
     </article>
   );
