@@ -4,7 +4,7 @@ import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
-export function Post({ author, publishedAt }) {
+export function Post({ author, publishedAt, content }) {
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
@@ -34,6 +34,17 @@ export function Post({ author, publishedAt }) {
       </header>
 
       <div className={styles.content}>
+        {content.map((line, index) => {
+          if (line.type === "paragraph") {
+            return <p key={index}>{line.content}</p>;
+          } else if (line.type === "link") {
+            return (
+              <p key={index}>
+                <a href="#">{line.content}</a>
+              </p>
+            );
+          }
+        })}
         <p>Fala galeraa 👋 </p>
         <p>
           Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
