@@ -120,6 +120,10 @@
   background: var(--green-300);
 }
 
+.commentList {
+  margin-top: 2rem;
+}
+
 .horizontal {
   display: flex;
   gap: 0.5rem;
