@@ -21,7 +21,7 @@ const posts = [
       {
         type: "paragraph",
         content:
-          "Lancei um novo design para um site e adoraria saber o que acham!",
+          "Acabei de lançar um novo design para um site e adoraria saber o que acham!",
       },
       {
         type: "link",
@@ -29,6 +29,33 @@ const posts = [
       },
     ],
     publishedAt: "2024-10-22 20:15:13",
+    comments: [
+      {
+        comment: "O design está incrível, João! Parabéns!",
+        publishedAt: "2024-10-22 20:30:00",
+        author: {
+          avatarUrl: "https://github.com/marciadias.png",
+          name: "Márcia Dias",
+        },
+      },
+      {
+        comment: "Adorei o visual limpo do site. Continue assim!",
+        publishedAt: "2024-10-22 21:00:00",
+        author: {
+          avatarUrl: "https://github.com/pedroalves.png",
+          name: "Pedro Alves",
+        },
+      },
+      {
+        comment:
+          "Você poderia compartilhar um pouco do seu processo de design?",
+        publishedAt: "2024-10-22 22:15:30",
+        author: {
+          avatarUrl: "https://github.com/renatocastro.png",
+          name: "Renato Castro",
+        },
+      },
+    ],
   },
   {
     id: 2,
@@ -53,6 +80,32 @@ const posts = [
       },
     ],
     publishedAt: "2024-10-23 14:45:32",
+    comments: [
+      {
+        comment: "Ótimo progresso, Maria! Continue nos atualizando!",
+        publishedAt: "2024-10-23 15:00:00",
+        author: {
+          avatarUrl: "https://github.com/joaobarbosa.png",
+          name: "João Barbosa",
+        },
+      },
+      {
+        comment: "É bom ver tudo se encaixando, parabéns!",
+        publishedAt: "2024-10-23 16:00:00",
+        author: {
+          avatarUrl: "https://github.com/lucianacosta.png",
+          name: "Luciana Costa",
+        },
+      },
+      {
+        comment: "Estou ansioso para ver o produto final!",
+        publishedAt: "2024-10-23 17:00:00",
+        author: {
+          avatarUrl: "https://github.com/marcosrodrigues.png",
+          name: "Marcos Rodrigues",
+        },
+      },
+    ],
   },
   {
     id: 3,
@@ -77,6 +130,35 @@ const posts = [
       },
     ],
     publishedAt: "2024-10-24 09:30:00",
+    comments: [
+      {
+        comment:
+          "Resultados interessantes, Carlos! Pode compartilhar mais sobre a metodologia?",
+        publishedAt: "2024-10-24 10:15:00",
+        author: {
+          avatarUrl: "https://github.com/paulapereira.png",
+          name: "Paula Pereira",
+        },
+      },
+      {
+        comment:
+          "Os dados parecem promissores! Adoraria ouvir mais na próxima reunião.",
+        publishedAt: "2024-10-24 11:00:00",
+        author: {
+          avatarUrl: "https://github.com/robertofaria.png",
+          name: "Roberto Faria",
+        },
+      },
+      {
+        comment:
+          "Ótima análise, Carlos! Tenho algumas perguntas sobre as tendências que você mencionou.",
+        publishedAt: "2024-10-24 12:30:00",
+        author: {
+          avatarUrl: "https://github.com/clarapereira.png",
+          name: "Clara Pereira",
+        },
+      },
+    ],
   },
   {
     id: 4,
@@ -101,6 +183,32 @@ const posts = [
       },
     ],
     publishedAt: "2024-10-25 17:20:45",
+    comments: [
+      {
+        comment: "Que campanha empolgante, Ana! Eu topo!",
+        publishedAt: "2024-10-25 18:00:00",
+        author: {
+          avatarUrl: "https://github.com/renatalima.png",
+          name: "Renata Lima",
+        },
+      },
+      {
+        comment: "Adorei essa ideia, não vejo a hora de participar!",
+        publishedAt: "2024-10-25 19:30:00",
+        author: {
+          avatarUrl: "https://github.com/juliocesar.png",
+          name: "Julio Cesar",
+        },
+      },
+      {
+        comment: "Isso é exatamente o que precisamos. Contem comigo!",
+        publishedAt: "2024-10-25 20:00:00",
+        author: {
+          avatarUrl: "https://github.com/sandrapereira.png",
+          name: "Sandra Pereira",
+        },
+      },
+    ],
   },
   {
     id: 5,
@@ -125,9 +233,35 @@ const posts = [
       },
     ],
     publishedAt: "2024-10-26 12:05:22",
+    comments: [
+      {
+        comment:
+          "Esse curso parece incrível, Lucas! Vou dar uma olhada com certeza.",
+        publishedAt: "2024-10-26 12:30:00",
+        author: {
+          avatarUrl: "https://github.com/victorbrito.png",
+          name: "Victor Brito",
+        },
+      },
+      {
+        comment: "Estava procurando algo assim, valeu por compartilhar!",
+        publishedAt: "2024-10-26 13:00:00",
+        author: {
+          avatarUrl: "https://github.com/larissalima.png",
+          name: "Larissa Lima",
+        },
+      },
+      {
+        comment: "Estou fazendo seu curso agora e está sendo fantástico!",
+        publishedAt: "2024-10-26 13:30:00",
+        author: {
+          avatarUrl: "https://github.com/diogocosta.png",
+          name: "Diogo Costa",
+        },
+      },
+    ],
   },
 ];
-
 function App() {
   return (
     <div>
@@ -148,6 +282,7 @@ function App() {
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
+                comments={post.comments}
               />
             );
           })}

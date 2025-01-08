@@ -4,7 +4,7 @@ import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
-export function Post({ author, publishedAt, content }) {
+export function Post({ author, publishedAt, content, comments }) {
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
@@ -16,6 +16,10 @@ export function Post({ author, publishedAt, content }) {
     locale: ptBr,
     addSuffix: true,
   });
+
+  function handleCreateNewComment() {
+    event.preventDefault();
+  }
 
   return (
     <article className={styles.post}>
@@ -60,7 +64,7 @@ export function Post({ author, publishedAt, content }) {
         </div>
       </div>
 
-      <form className={styles.commentForm}>
+      <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea placeholder="Deixe um comentário" />
         <footer>
@@ -69,9 +73,16 @@ export function Post({ author, publishedAt, content }) {
       </form>
 
       <div className={styles.commentList}>
-        <Comment />
-        <Comment />
-        <Comment />
+        {comments.map((comment, index) => {
+          return (
+            <Comment
+              key={index}
+              content={comment.comment}
+              author={comment.author}
+              publishedAt={publishedAt}
+            />
+          );
+        })}
       </div>
     </article>
   );

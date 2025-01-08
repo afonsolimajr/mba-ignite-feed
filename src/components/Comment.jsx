@@ -1,25 +1,39 @@
 import { ThumbsUp, Trash } from "phosphor-react";
 import styles from "./Comment.module.css";
 import { Avatar } from "./Avatar";
+import { format, formatDistanceToNow } from "date-fns";
+import ptBr from "date-fns/locale/pt-BR";
 
-export function Comment() {
+export function Comment({ content, author, publishedAt }) {
+  const publishedDateFormatted = format(
+    publishedAt,
+    "d 'de' LLLL 'às' HH:mm'h'",
+    {
+      locale: ptBr,
+    }
+  );
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBr,
+    addSuffix: true,
+  });
+
   return (
     <div className={styles.comment}>
-      <Avatar src="https://github.com/dsenvolva.png" alt="" />
+      <Avatar src={author.avatarUrl} alt="" />
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Diego Fernandes</strong>
-              <time title="2025-01-03 16:35:30" dateTime="2025-01-03 16:35:30">
-                Publicado há algum tempo
+              <strong>{author.name}</strong>
+              <time title={publishedDateFormatted} dateTime={publishedAt}>
+                {publishedDateRelativeToNow}
               </time>
             </div>
             <button title="Deletar">
               <Trash size={24} />
             </button>
           </header>
-          <p>Muito bom Devon, parabéns</p>
+          <p>{content}</p>
         </div>
         <footer>
           <button>
