@@ -3,8 +3,12 @@ import ptBr from "date-fns/locale/pt-BR";
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
+import { useState } from "react";
 
 export function Post({ author, publishedAt, content, comments }) {
+  const [commentsMemory, setCommentsMemory] = useState(comments);
+  const [newComment, setNewComment] = useState("");
+
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
@@ -19,6 +23,26 @@ export function Post({ author, publishedAt, content, comments }) {
 
   function handleCreateNewComment() {
     event.preventDefault();
+    const newCommentObj = {
+      content: newComment,
+      publishedAt: new Date().toISOString(),
+      author: {
+        avatarUrl: "https://github.com/dsenvolva.png",
+        name: "Dsenvolva Tecnologia",
+      },
+    };
+
+    console.log(newCommentObj);
+
+    setCommentsMemory((prev) => {
+      return [...prev, newCommentObj];
+    });
+
+    setNewComment("");
+  }
+
+  function handleNewCommentChange() {
+    setNewComment(event.target.value);
   }
 
   return (
@@ -49,14 +73,7 @@ export function Post({ author, publishedAt, content, comments }) {
             );
           }
         })}
-        <p>Fala galeraa 👋 </p>
-        <p>
-          Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
-          no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀{" "}
-        </p>
-        <p>
-          👉 <a href="">jane.design/doctorcare</a>{" "}
-        </p>
+
         <div className={styles.horizontal}>
           <a href="">#novoprojeto</a>
           <a href="">#nlw</a>
@@ -66,20 +83,24 @@ export function Post({ author, publishedAt, content, comments }) {
 
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
-        <textarea placeholder="Deixe um comentário" />
+        <textarea
+          placeholder="Deixe um comentário"
+          value={newComment}
+          onChange={handleNewCommentChange}
+        />
         <footer>
           <button type="submit">Publicar</button>
         </footer>
       </form>
 
       <div className={styles.commentList}>
-        {comments.map((comment, index) => {
+        {commentsMemory.map((comment, index) => {
           return (
             <Comment
               key={index}
-              content={comment.comment}
+              content={comment.content}
               author={comment.author}
-              publishedAt={publishedAt}
+              publishedAt={comment.publishedAt}
             />
           );
         })}

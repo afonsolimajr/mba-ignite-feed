@@ -31,7 +31,7 @@ const posts = [
     publishedAt: "2024-10-22 20:15:13",
     comments: [
       {
-        comment: "O design está incrível, João! Parabéns!",
+        content: "O design está incrível, João! Parabéns!",
         publishedAt: "2024-10-22 20:30:00",
         author: {
           avatarUrl: "https://github.com/marciadias.png",
@@ -39,7 +39,7 @@ const posts = [
         },
       },
       {
-        comment: "Adorei o visual limpo do site. Continue assim!",
+        content: "Adorei o visual limpo do site. Continue assim!",
         publishedAt: "2024-10-22 21:00:00",
         author: {
           avatarUrl: "https://github.com/pedroalves.png",
@@ -47,7 +47,7 @@ const posts = [
         },
       },
       {
-        comment:
+        content:
           "Você poderia compartilhar um pouco do seu processo de design?",
         publishedAt: "2024-10-22 22:15:30",
         author: {
@@ -82,7 +82,7 @@ const posts = [
     publishedAt: "2024-10-23 14:45:32",
     comments: [
       {
-        comment: "Ótimo progresso, Maria! Continue nos atualizando!",
+        content: "Ótimo progresso, Maria! Continue nos atualizando!",
         publishedAt: "2024-10-23 15:00:00",
         author: {
           avatarUrl: "https://github.com/joaobarbosa.png",
@@ -90,7 +90,7 @@ const posts = [
         },
       },
       {
-        comment: "É bom ver tudo se encaixando, parabéns!",
+        content: "É bom ver tudo se encaixando, parabéns!",
         publishedAt: "2024-10-23 16:00:00",
         author: {
           avatarUrl: "https://github.com/lucianacosta.png",
@@ -98,7 +98,7 @@ const posts = [
         },
       },
       {
-        comment: "Estou ansioso para ver o produto final!",
+        content: "Estou ansioso para ver o produto final!",
         publishedAt: "2024-10-23 17:00:00",
         author: {
           avatarUrl: "https://github.com/marcosrodrigues.png",
@@ -132,7 +132,7 @@ const posts = [
     publishedAt: "2024-10-24 09:30:00",
     comments: [
       {
-        comment:
+        content:
           "Resultados interessantes, Carlos! Pode compartilhar mais sobre a metodologia?",
         publishedAt: "2024-10-24 10:15:00",
         author: {
@@ -141,7 +141,7 @@ const posts = [
         },
       },
       {
-        comment:
+        content:
           "Os dados parecem promissores! Adoraria ouvir mais na próxima reunião.",
         publishedAt: "2024-10-24 11:00:00",
         author: {
@@ -150,7 +150,7 @@ const posts = [
         },
       },
       {
-        comment:
+        content:
           "Ótima análise, Carlos! Tenho algumas perguntas sobre as tendências que você mencionou.",
         publishedAt: "2024-10-24 12:30:00",
         author: {
@@ -185,7 +185,7 @@ const posts = [
     publishedAt: "2024-10-25 17:20:45",
     comments: [
       {
-        comment: "Que campanha empolgante, Ana! Eu topo!",
+        content: "Que campanha empolgante, Ana! Eu topo!",
         publishedAt: "2024-10-25 18:00:00",
         author: {
           avatarUrl: "https://github.com/renatalima.png",
@@ -193,7 +193,7 @@ const posts = [
         },
       },
       {
-        comment: "Adorei essa ideia, não vejo a hora de participar!",
+        content: "Adorei essa ideia, não vejo a hora de participar!",
         publishedAt: "2024-10-25 19:30:00",
         author: {
           avatarUrl: "https://github.com/juliocesar.png",
@@ -201,7 +201,7 @@ const posts = [
         },
       },
       {
-        comment: "Isso é exatamente o que precisamos. Contem comigo!",
+        content: "Isso é exatamente o que precisamos. Contem comigo!",
         publishedAt: "2024-10-25 20:00:00",
         author: {
           avatarUrl: "https://github.com/sandrapereira.png",
@@ -235,7 +235,7 @@ const posts = [
     publishedAt: "2024-10-26 12:05:22",
     comments: [
       {
-        comment:
+        content:
           "Esse curso parece incrível, Lucas! Vou dar uma olhada com certeza.",
         publishedAt: "2024-10-26 12:30:00",
         author: {
@@ -244,7 +244,7 @@ const posts = [
         },
       },
       {
-        comment: "Estava procurando algo assim, valeu por compartilhar!",
+        content: "Estava procurando algo assim, valeu por compartilhar!",
         publishedAt: "2024-10-26 13:00:00",
         author: {
           avatarUrl: "https://github.com/larissalima.png",
@@ -252,7 +252,7 @@ const posts = [
         },
       },
       {
-        comment: "Estou fazendo seu curso agora e está sendo fantástico!",
+        content: "Estou fazendo seu curso agora e está sendo fantástico!",
         publishedAt: "2024-10-26 13:30:00",
         author: {
           avatarUrl: "https://github.com/diogocosta.png",
