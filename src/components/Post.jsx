@@ -45,6 +45,15 @@ export function Post({ author, publishedAt, content, comments }) {
     setNewComment(event.target.value);
   }
 
+  function handleOnDeleteComment(comment) {
+    console.log("delete", comment);
+    const newValue = commentsMemory.filter((com) => {
+      return com.content !== comment.content;
+    });
+
+    setCommentsMemory(newValue);
+  }
+
   return (
     <article className={styles.post}>
       <header>
@@ -94,13 +103,14 @@ export function Post({ author, publishedAt, content, comments }) {
       </form>
 
       <div className={styles.commentList}>
-        {commentsMemory.map((comment, index) => {
+        {commentsMemory.map((comment) => {
           return (
             <Comment
-              key={index}
+              key={comment.content}
               content={comment.content}
               author={comment.author}
               publishedAt={comment.publishedAt}
+              onDeleteComment={() => handleOnDeleteComment(comment)}
             />
           );
         })}

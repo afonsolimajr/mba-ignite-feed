@@ -4,7 +4,7 @@ import { Avatar } from "./Avatar";
 import { format, formatDistanceToNow } from "date-fns";
 import ptBr from "date-fns/locale/pt-BR";
 
-export function Comment({ content, author, publishedAt }) {
+export function Comment({ content, author, publishedAt, onDeleteComment }) {
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
@@ -16,6 +16,10 @@ export function Comment({ content, author, publishedAt }) {
     locale: ptBr,
     addSuffix: true,
   });
+
+  function handleDeleteClick() {
+    onDeleteComment();
+  }
 
   return (
     <div className={styles.comment}>
@@ -29,7 +33,7 @@ export function Comment({ content, author, publishedAt }) {
                 {publishedDateRelativeToNow}
               </time>
             </div>
-            <button title="Deletar">
+            <button title="Deletar" onClick={handleDeleteClick}>
               <Trash size={24} />
             </button>
           </header>
