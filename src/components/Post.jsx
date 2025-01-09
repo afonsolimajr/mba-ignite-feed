@@ -42,6 +42,8 @@ export function Post({ author, publishedAt, content, comments }) {
   }
 
   function handleNewCommentChange() {
+    event.target.setCustomValidity("");
+
     setNewComment(event.target.value);
   }
 
@@ -52,6 +54,13 @@ export function Post({ author, publishedAt, content, comments }) {
     });
 
     setCommentsMemory(newValue);
+  }
+
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity(
+      "Mensagem personalizada: Esse campo é obrigatório!"
+    );
+    console.log(event);
   }
 
   return (
@@ -96,9 +105,13 @@ export function Post({ author, publishedAt, content, comments }) {
           placeholder="Deixe um comentário"
           value={newComment}
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={newComment.length === 0}>
+            Publicar
+          </button>
         </footer>
       </form>
 
