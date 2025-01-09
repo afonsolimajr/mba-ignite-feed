@@ -37,6 +37,7 @@ const posts = [
           avatarUrl: "https://github.com/marciadias.png",
           name: "Márcia Dias",
         },
+        likes: 0,
       },
       {
         content: "Adorei o visual limpo do site. Continue assim!",
@@ -45,6 +46,7 @@ const posts = [
           avatarUrl: "https://github.com/pedroalves.png",
           name: "Pedro Alves",
         },
+        likes: 0,
       },
       {
         content:
@@ -53,6 +55,7 @@ const posts = [
         author: {
           avatarUrl: "https://github.com/renatocastro.png",
           name: "Renato Castro",
+          likes: 0,
         },
       },
     ],
@@ -88,6 +91,7 @@ const posts = [
           avatarUrl: "https://github.com/joaobarbosa.png",
           name: "João Barbosa",
         },
+        likes: 0,
       },
       {
         content: "É bom ver tudo se encaixando, parabéns!",
@@ -96,6 +100,7 @@ const posts = [
           avatarUrl: "https://github.com/lucianacosta.png",
           name: "Luciana Costa",
         },
+        likes: 0,
       },
       {
         content: "Estou ansioso para ver o produto final!",
@@ -104,6 +109,7 @@ const posts = [
           avatarUrl: "https://github.com/marcosrodrigues.png",
           name: "Marcos Rodrigues",
         },
+        likes: 0,
       },
     ],
   },
@@ -138,6 +144,7 @@ const posts = [
         author: {
           avatarUrl: "https://github.com/paulapereira.png",
           name: "Paula Pereira",
+          likes: 0,
         },
       },
       {
@@ -147,6 +154,7 @@ const posts = [
         author: {
           avatarUrl: "https://github.com/robertofaria.png",
           name: "Roberto Faria",
+          likes: 0,
         },
       },
       {
@@ -156,6 +164,7 @@ const posts = [
         author: {
           avatarUrl: "https://github.com/clarapereira.png",
           name: "Clara Pereira",
+          likes: 0,
         },
       },
     ],
@@ -191,6 +200,7 @@ const posts = [
           avatarUrl: "https://github.com/renatalima.png",
           name: "Renata Lima",
         },
+        likes: 0,
       },
       {
         content: "Adorei essa ideia, não vejo a hora de participar!",
@@ -199,6 +209,7 @@ const posts = [
           avatarUrl: "https://github.com/juliocesar.png",
           name: "Julio Cesar",
         },
+        likes: 0,
       },
       {
         content: "Isso é exatamente o que precisamos. Contem comigo!",
@@ -207,6 +218,7 @@ const posts = [
           avatarUrl: "https://github.com/sandrapereira.png",
           name: "Sandra Pereira",
         },
+        likes: 0,
       },
     ],
   },
@@ -241,6 +253,7 @@ const posts = [
         author: {
           avatarUrl: "https://github.com/victorbrito.png",
           name: "Victor Brito",
+          likes: 0,
         },
       },
       {
@@ -250,6 +263,7 @@ const posts = [
           avatarUrl: "https://github.com/larissalima.png",
           name: "Larissa Lima",
         },
+        likes: 0,
       },
       {
         content: "Estou fazendo seu curso agora e está sendo fantástico!",
@@ -258,6 +272,7 @@ const posts = [
           avatarUrl: "https://github.com/diogocosta.png",
           name: "Diogo Costa",
         },
+        likes: 0,
       },
     ],
   },

@@ -3,8 +3,10 @@ import styles from "./Comment.module.css";
 import { Avatar } from "./Avatar";
 import { format, formatDistanceToNow } from "date-fns";
 import ptBr from "date-fns/locale/pt-BR";
+import { useState } from "react";
 
 export function Comment({ content, author, publishedAt, onDeleteComment }) {
+  const [likes, setLikes] = useState(0);
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
@@ -19,6 +21,10 @@ export function Comment({ content, author, publishedAt, onDeleteComment }) {
 
   function handleDeleteClick() {
     onDeleteComment();
+  }
+
+  function handleLikeClick() {
+    setLikes((prev) => prev + 1);
   }
 
   return (
@@ -40,9 +46,9 @@ export function Comment({ content, author, publishedAt, onDeleteComment }) {
           <p>{content}</p>
         </div>
         <footer>
-          <button>
+          <button onClick={handleLikeClick}>
             <ThumbsUp />
-            Aplaudir <span>20</span>
+            Aplaudir <span>{likes}</span>
           </button>
         </footer>
       </div>
